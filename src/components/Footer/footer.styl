@@ -1,0 +1,74 @@
+@import '../../../public/css/base.styl'
+
+footer
+    color #fff
+    padding 20px 0
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    z-index 10
+    span
+        font-weight 500
+    .fa
+        font-size 20px
+
+.footer-logo
+    float left
+    margin-top 5px
+
+.footer-share
+    float right
+    span
+        font-weight 500
+    a
+        margin 0 12px
+        color #fff
+    .full-share
+        margin-top 8px
+        a
+            border-bottom 2px solid transparent
+            transition all .5s ease
+            padding-bottom 5px
+        a:hover
+            border-color #fff
+            margin-left 20px
+            margin-right 20px
+    .mobile-share
+        display none
+        a
+            margin 0 7px
+            span
+                round-button(30px,#fff)
+                font-size 14px
+                transition all .5s ease
+            span:hover
+                transform scale(1.2)
+            span.fb:hover
+                background $fb-color
+                border-color $fb-color
+            span.tw:hover
+                background $tw-color
+                border-color $tw-color
+            span.gp:hover
+                background $gp-color
+                border-color $gp-color
+
+.aboutOpen .footer-share
+    display none
+
+@media only screen and (max-width : 768px)
+    .footer-share
+        .full-share
+            display none
+        .mobile-share
+            display block
+@media only screen and (max-width : 480px)
+    .footer-logo
+        display none
+    .footer-share
+        float none
+        text-align center
+        .mobile-share
+            a
+                margin 0 20px

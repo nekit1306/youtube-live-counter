@@ -1,0 +1,318 @@
+@import '../../../public/css/base'
+
+
+.home-page
+    .wrapper
+        position relative
+        text-align center
+        color #fff
+        transition all .5s ease
+        z-index 1
+    &:after
+        content ''
+        visibility hidden
+        opacity 0
+        transition all .5s ease
+        full-page-overlay(fixed, rgba(0,0,0,.5))
+.arrow-right
+    position relative
+    float right
+    top 17px
+svg
+    &.search-tip
+        #dashed-line
+            stroke-width 2px
+            stroke-dasharray 6
+.fake-input-wrapper
+    position relative
+    .icon-search
+        position absolute
+        top 14px
+        right 20px
+        font-size 22px
+    input
+        &.form-control
+            height 50px
+            background #822022
+            border-color transparent transparent transparent transparent
+            color #fff
+            font-size 26px
+            box-shadow 0 2px 4px rgba(0,0,0,.15)
+            border-radius 5px
+            padding-right 50px
+.input-wrapper
+    position relative
+    transition all .5s
+    margin 50px 0
+    input
+        &.form-control
+            height 80px
+            font-size 60px
+            color #fff
+            background transparent
+            border-color transparent transparent transparent transparent
+input
+    &.form-control
+        &:focus
+            box-shadow none
+            border-color transparent transparent transparent transparent
+.form-control
+    &::-webkit-input-placeholder
+        color rgba(255, 255, 255, 0.45)
+.search-wrapper
+    input
+        padding-right 50px
+.main-title
+    margin 30px 0
+    h2
+        font-size 40px
+        font-weight 300
+.main-title,.fake-input-wrapper
+    transition opacity .5s ease
+    transition-delay .5s
+.list
+    border-radius 10px
+    padding 7px 25px
+    transition all .5s ease
+    &:hover
+        background rgba(51, 51, 51, 0.6)
+        transform translateX(20px)
+.list-items
+    overflow hidden
+    padding 0 20px 0 0
+    .list
+        margin 10px 0
+        a
+            display block
+            min-height 52px
+        .img-container
+            display inline-block
+            width 52px
+            height 52px
+            vertical-align middle
+            background #fff
+            border-radius 50%
+            padding 2px
+            img
+                width 100%
+        span
+            display inline-block
+            vertical-align middle
+            color #fff
+            margin-left 50px
+            max-width 400px
+            overflow hidden
+.help-slide
+    position fixed
+    width 45%
+    height 100%
+    top 0
+    right 0
+    z-index 1000
+    background-color #fff
+    color #1a1a1a
+    transform translate3d(100%,0,0)
+    overflow hidden
+    visibility hidden
+    backface-visibility hidden
+    transition transform 0.5s cubic-bezier(.86,.24,.23,1), visibility 0.5s cubic-bezier(.86,.24,.23,1)
+    transition-delay 0s
+    .help-wrapper
+        height 100%
+        overflow-y scroll
+        overflow-x hidden
+        margin 15px -15px 15px 15px
+        padding 20px 55px 60px 50px
+        .help-title
+            margin-top 60px
+        .close-help-icon
+            position absolute
+            top 20px
+            left 20px
+            width 40px
+            height 40px
+            z-index 1000
+            cursor pointer
+            font-size 40px
+            transition transform .5s ease
+
+            &:hover
+                transform translate3d(5px,0,0)
+        .target
+            transform  translate3d(45px,0,0)
+            transition transform .5s cubic-bezier(.86,.24,.23,1)
+        addTransitionDelay(4)
+.help-open
+    .help-slide
+        transform translate3d(0,0,0)
+        visibility visible
+        transition-delay .5s
+        .help-wrapper
+            .target
+                transform  translate3d(0,0,0)
+            clearTransitionDelay(4, 0.55)
+    &.home-page
+        .wrapper
+            transform translateX(-23%)
+        &:after
+            opacity 1
+            visibility visible
+    .sharing
+        opacity 1
+        transform translate3d(-50%, -50%,0) perspective(1px) scale(1)
+        transition-delay .5s
+    .main-title,.fake-input-wrapper
+        opacity 0
+        transition-delay 0s
+.sharing
+    position absolute
+    top 50%
+    left 50%
+    transform translate3d(-50%, -50%,0) perspective(1px) scale(0)
+    transition all .5s ease
+    opacity 0
+    transition-delay 0s
+    z-index 10
+    a
+        color #fff
+        margin 0 20px
+        display inline-block
+    span
+        round-button(60px,#fff)
+        -webkit-backface-visibility hiddden
+        transition all .5s ease
+    span:hover
+        transform scale(1.2)
+    span.fb:hover
+        background $fb-color
+        border-color $fb-color
+    span.tw:hover
+        background $tw-color
+        border-color $tw-color
+    span.gp:hover
+        background $gp-color
+        border-color $gp-color
+.overlay
+    overflow auto
+    transition all .4s cubic-bezier(.58,.27,.39,.83)
+    transform translateY(-3%)
+    padding-top 100px
+    z-index 1000
+    opacity 0
+    visibility hidden
+
+    &.is-active
+        visibility visible
+        opacity 1
+        transform translateY(0)
+    .exit
+        position absolute
+        right 10px
+        top 10px
+        cursor pointer
+        transition transform .5s ease
+        &:hover
+            transform rotate(90deg)
+    full-page-overlay(fixed, rgba(0,0,0,.95))
+
+.overlay-title
+    color #FFFFFF
+    -webkit-backface-visibility hidden
+    h1
+        font-weight 300
+        font-size 45px
+.main-color
+    color $primary-color-light
+
+@media only screen and (max-width : 1200px)
+    .search-tip
+        visibility hidden
+        height 50px
+@media only screen and (max-width : 768px)
+    .main-title
+        h2
+            font-size 30px
+    .list-items
+        .list
+            a
+                min-height 42px
+            .img-container
+                width 42px
+                height 42px
+    .fake-input-wrapper
+        input
+            &.form-control
+                height 40px
+                font-size 18px
+        .fa
+            font-size 19px
+    .form-group
+        &.input-wrapper
+            margin 30px 0
+    .input-wrapper
+        input
+            &.form-control
+                height 70px
+                font-size 45px
+    .overlay
+        .exit
+            top 9px
+            svg
+                width 22px
+                height 22px
+        .overlay-title
+            h1
+                font-size 35px
+    .arrow-right
+        top 14px
+    .help-slide
+        opacity 1
+    .sharing
+        span
+            font-size 20px
+            round-button(45px,#fff)
+    .list-items
+        .list
+            span
+                max-width 200px
+@media only screen and (max-width : 480px)
+    .main-title
+        h2
+            font-size 30px
+    .list-items
+        .list
+            a
+                min-height 40px
+            .img-container
+                width 40px
+                height 40px
+            span
+                margin-left 10px
+                max-width 130px
+    .fake-input-wrapper
+        input
+            &.form-control
+                height 40px
+                font-size 20px
+        .fa
+            font-size 16px
+    .form-group
+        &.input-wrapper
+            margin 20px 0
+    .input-wrapper
+        input
+            &.form-control
+                height 60px
+                font-size 40px3
+    .overlay
+        .exit
+            top 9px
+            svg
+                width 18px
+                height 18px
+    .help-slide
+        width 100%
+    .sharing
+        display none
+    .arrow-right
+        top 13px

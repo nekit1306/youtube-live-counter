@@ -1,0 +1,178 @@
+@import '../../../public/css/base'
+
+.max-width-container
+    padding 10px 0
+.channel-page
+    .wrapper
+        position relative
+        text-align center
+        color #FFF
+        transition all .5s ease
+.count-type-translate-appear
+    transform translateX(-50px)
+    &.count-type-translate-appear-active
+        transform translateX(0)
+        transition transform .5s ease
+.channel-content
+    padding 10px 0
+    overflow hidden
+    .channel-title
+        h2
+            font-size 45px
+        h1
+            font-size 75px
+    .channel-image
+        margin-bottom 20px
+        text-align center
+        img
+            width 100%
+        .img-container
+            position relative
+            width 150px
+            height 150px
+            background #ffffff
+            display inline-block
+            border-radius 50%
+            z-index 1000
+            transform translateZ(0)
+            &:before
+                content ''
+                position absolute
+                left 50%
+                top 50%
+                transform translate3d(-50%,-50%,0) scale(1.05)
+                width 100%
+                height 100%
+                background #fff
+                border 7px solid #fff
+                border-radius 50%
+                transition all .4s ease
+                z-index -1
+            &:hover
+                &:before
+                    background #f8f8fd
+                    border-color #642120
+                    transform translate3d(-50%,-50%,0) scale(1.13)
+.count-type
+    position absolute
+    left 50px
+    top 40%
+    z-index 1000
+    text-align center
+    -webkit-backface-visibility hidden
+    li
+        margin-bottom 15px
+    span
+        display block
+        &.tooltiptext
+            width 100px
+            background-color #811620
+            color #fff
+            text-align center
+            padding 5px 0
+            border-radius 6px
+            position absolute
+            top 50%
+            left 0
+            transform translate3d(-10px,-50%,0) perspective(1px) scale(.25)
+            z-index 1
+            font-size 13px
+            opacity 0
+            transition all .5s ease
+            &::after
+                content " "
+                position absolute
+                top 50%
+                right 100%
+                margin-top -5px
+                border-width 5px
+                border-style solid
+                border-color transparent #811620 transparent transparent
+    .type-spot
+        cursor pointer
+        &:hover
+            .type-icon
+                svg
+                    path
+                        fill #522225
+            span
+                &.tooltiptext
+                    transform translate3d(50px,-50%,0) perspective(1px) scale(1)
+                    opacity 1
+                    visibility visible
+        &.type-active
+            .type-icon
+                svg
+                    path
+                        fill #fff
+            span
+                &.tooltiptext
+                    opacity 1
+                    visibility visible
+                    transform translate3d(50px,-50%,0) perspective(1px) scale(1)
+        .type-icon
+            svg
+                path
+                    fill #731f1f
+    .type-icon
+        svg
+            path
+                transition all .5s ease
+    .type-active
+        &:hover
+            svg
+                path
+                    fill #fff
+    ul
+        li
+            position relative
+            &.type
+                margin-bottom 10px
+                font-weight 400
+                font-size 18px
+                color #fff
+@media  screen and (max-width : 1200px)
+    .max-width-container
+        padding-left 50px
+        padding-right 50px
+
+@media  screen and (max-width : 992px)
+    .count-type
+        span
+            &.tooltiptext
+                display none
+    .max-width-container
+        padding-left 80px
+        padding-right 80px
+
+@media  screen and (max-width : 768px)
+    .channel-content
+        .channel-image
+            .img-container
+                width 120px
+                height 120px
+        .channel-title
+            h1
+                font-size 50px
+            h2
+                font-size 30px
+    .max-width-container
+        padding-left 90px
+        padding-right 90px
+
+@media  screen and (max-width : 480px)
+    .channel-content
+        .channel-image
+            .img-container
+                width 100px
+                height 100px
+        .channel-title
+            h1
+                font-size 40px
+            h2
+                font-size 24px
+    .count-type
+        left 5px
+    .max-width-container
+        padding-left 50px
+        padding-right 50px

@@ -1,0 +1,47 @@
+@import '../../../public/css/base.styl'
+
+.header
+    position absolute
+    top 0
+    left 0
+    right 0
+    z-index 10
+    .nav-logo
+        float left
+        margin-top 20px
+    .nav-divider
+        width 1px
+        height 20px
+        margin 0 10px
+        background #fff
+    .nav-right
+        float right
+        color #fff
+        height 32px
+        margin-top 24px
+        font-size 17px
+        span
+            cursor pointer
+            display inline-block
+            vertical-align middle
+        .help-link
+            &:after
+                content '|'
+                margin 0 10px
+        .git-icon
+            margin-left 10px
+            color #fff
+            span
+                transition transform .5s ease
+                &:hover
+                    transform rotate(45deg)
+
+@media only screen and (max-width : 480px)
+
+    .header
+        .nav-logo img
+                width 90px
+        .nav-right
+            margin-top 29px
+        .git-icon span
+            font-size 24px

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <meta name="description" content="">
+        <link rel="stylesheet" href="./../css/bootstrap/bootstrap.min.css" >
+        <link rel="stylesheet" href="./../css/font-awesome/css/font-awesome.min.css">
+
+        <title>Youtube Live Counter | Realtime channel statistics</title>
+        <style type="text/css">
+            .preload {
+                position:fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+                background: #af2729;
+                background-image: url(./../images/app_logo_plain.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 100px;
+                transition: all .5s ease;
+            }
+            .loaded .preload{
+                opacity:0;
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="/bundle.js"></script>
+    </body>
+</html>

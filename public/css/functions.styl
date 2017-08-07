@@ -1,0 +1,10 @@
+
+addTransitionDelay(length)
+    for i in (1..length)
+        .target:nth-child({i})
+            transition-delay 0s
+
+clearTransitionDelay(length, startDelay)
+    for i in (1..length)
+        .target:nth-child({i})
+            transition-delay startDelay  + (i / 40)s

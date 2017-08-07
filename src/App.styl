@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500')
+@import 'components/Footer/footer.styl'
+@import 'components/Header/header.styl'
+@import 'views/Home/home.styl'
+@import 'views/Channel/channel.styl'
+@import "./../public/css/theme"
+
+
+body,html,#root,.site-container,.page,
+#youtube-app,.page>div,.home-page,.wrapper
+    height 100%
+
+.height-centered
+    position absolute
+    width 100%
+    top 50%
+    left 0
+    transform translateY(-50%)
+
+.overlay-rotate
+    full-page-overlay(fixed, #303030)
+    z-index 9999
+    display none
+    background-image url('/images/rotate-phone.png')
+    background-position center center
+    background-repeat no-repeat
+    background-size 120px
+
+.page-appear-enter
+    position absolute
+    width 100%
+    height 100%
+    opacity .1
+    &.page-appear-enter-active
+        position absolute
+        width 100%
+        height 100%
+        opacity 1
+        transition opacity ease-out 500ms
+
+.page-appear-leave
+    opacity 1
+    &.page-appear-leave-active
+        opacity .1
+        transition opacity ease-out 300ms
+
+
+@media only screen and (max-height: 500px) and (max-width: 760px) and (orientation: landscape)
+    .overlay-rotate
+        display block
