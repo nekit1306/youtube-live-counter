@@ -7,7 +7,7 @@ const searchUrl = 'https://www.googleapis.com/youtube/v3/search';
 const channelsUrl = 'https://www.googleapis.com/youtube/v3/channels';
 
 // Api Key or use your own
-const API_KEY = 'AIzaSyCoH-ezyKbGyi5q3Owh2Re7OQr8ciWyDUU';
+const API_KEY = 'AIzaSyDBHsQRYlsF78Cy1EAnR1WX3vNoOIr2Llo';
 
 
 
